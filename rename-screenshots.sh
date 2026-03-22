@@ -12,7 +12,7 @@ WATCH_DIR="$HOME/Screenshots"
     base=$(basename "$file")
     new_base="${base// /_}"
 
-    if [[ "$base" != "$new_base" ]]; then
+    if [[ "$base" != "$new_base" ]] && [[ -f "$file" ]]; then
       mv "$file" "$dir/$new_base"
       echo "Renamed: $base -> $new_base"
     fi
